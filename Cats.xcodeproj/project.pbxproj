@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0E10CD2126230A00CC4C1B /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E10CC2126230A00CC4C1B /* CatCollectionViewCell.m */; };
+		7D0E10D02126247600CC4C1B /* CatcollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E10CF2126247600CC4C1B /* CatcollectionReusableView.m */; };
 		7DAA63E5212621AF00BA582F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63E4212621AF00BA582F /* AppDelegate.m */; };
 		7DAA63E8212621AF00BA582F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63E7212621AF00BA582F /* ViewController.m */; };
 		7DAA63EB212621AF00BA582F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DAA63E9212621AF00BA582F /* Main.storyboard */; };
@@ -15,6 +17,7 @@
 		7DAA63F3212621B000BA582F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63F2212621B000BA582F /* main.m */; };
 		7DAA63FD212621B000BA582F /* CatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63FC212621B000BA582F /* CatsTests.m */; };
 		7DAA6408212621B000BA582F /* CatsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA6407212621B000BA582F /* CatsUITests.m */; };
+		7DAA641A2126220E00BA582F /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA64192126220E00BA582F /* Cat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D0E10CB2126230A00CC4C1B /* CatCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
+		7D0E10CC2126230A00CC4C1B /* CatCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
+		7D0E10CE2126247600CC4C1B /* CatcollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatcollectionReusableView.h; sourceTree = "<group>"; };
+		7D0E10CF2126247600CC4C1B /* CatcollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatcollectionReusableView.m; sourceTree = "<group>"; };
 		7DAA63E0212621AF00BA582F /* Cats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAA63E3212621AF00BA582F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DAA63E4212621AF00BA582F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,8 @@
 		7DAA6403212621B000BA582F /* CatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAA6407212621B000BA582F /* CatsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatsUITests.m; sourceTree = "<group>"; };
 		7DAA6409212621B000BA582F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DAA64182126220E00BA582F /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		7DAA64192126220E00BA582F /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7DAA63E2212621AF00BA582F /* Cats */,
+				7DAA6417212621E200BA582F /* Supporting Files */,
 				7DAA63FB212621B000BA582F /* CatsTests */,
 				7DAA6406212621B000BA582F /* CatsUITests */,
 				7DAA63E1212621AF00BA582F /* Products */,
@@ -101,13 +111,11 @@
 		7DAA63E2212621AF00BA582F /* Cats */ = {
 			isa = PBXGroup;
 			children = (
-				7DAA63E3212621AF00BA582F /* AppDelegate.h */,
-				7DAA63E4212621AF00BA582F /* AppDelegate.m */,
-				7DAA63E6212621AF00BA582F /* ViewController.h */,
-				7DAA63E7212621AF00BA582F /* ViewController.m */,
-				7DAA63E9212621AF00BA582F /* Main.storyboard */,
+				7DAA641E2126222B00BA582F /* Model */,
+				7DAA641F2126223400BA582F /* View */,
+				7DAA6416212621CB00BA582F /* Controller */,
+				7DAA6415212621BF00BA582F /* Storyboards */,
 				7DAA63EC212621B000BA582F /* Assets.xcassets */,
-				7DAA63EE212621B000BA582F /* LaunchScreen.storyboard */,
 				7DAA63F1212621B000BA582F /* Info.plist */,
 				7DAA63F2212621B000BA582F /* main.m */,
 			);
@@ -130,6 +138,55 @@
 				7DAA6409212621B000BA582F /* Info.plist */,
 			);
 			path = CatsUITests;
+			sourceTree = "<group>";
+		};
+		7DAA6415212621BF00BA582F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63E9212621AF00BA582F /* Main.storyboard */,
+				7DAA63EE212621B000BA582F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7DAA6416212621CB00BA582F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63E6212621AF00BA582F /* ViewController.h */,
+				7DAA63E7212621AF00BA582F /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DAA6417212621E200BA582F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63E3212621AF00BA582F /* AppDelegate.h */,
+				7DAA63E4212621AF00BA582F /* AppDelegate.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DAA641E2126222B00BA582F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA64182126220E00BA582F /* Cat.h */,
+				7DAA64192126220E00BA582F /* Cat.m */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7DAA641F2126223400BA582F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D0E10CB2126230A00CC4C1B /* CatCollectionViewCell.h */,
+				7D0E10CC2126230A00CC4C1B /* CatCollectionViewCell.m */,
+				7D0E10CE2126247600CC4C1B /* CatcollectionReusableView.h */,
+				7D0E10CF2126247600CC4C1B /* CatcollectionReusableView.m */,
+			);
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAA641A2126220E00BA582F /* Cat.m in Sources */,
 				7DAA63E8212621AF00BA582F /* ViewController.m in Sources */,
+				7D0E10D02126247600CC4C1B /* CatcollectionReusableView.m in Sources */,
 				7DAA63F3212621B000BA582F /* main.m in Sources */,
 				7DAA63E5212621AF00BA582F /* AppDelegate.m in Sources */,
+				7D0E10CD2126230A00CC4C1B /* CatCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

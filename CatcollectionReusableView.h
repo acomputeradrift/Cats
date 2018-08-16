@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CatcollectionReusableView.h
 //  Cats
 //
 //  Created by Jamie on 2018-08-16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CatcollectionReusableView : UICollectionReusableView
 
 @end
-
