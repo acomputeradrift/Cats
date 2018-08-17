@@ -14,5 +14,6 @@
 //@property (nonatomic, strong) NSString* photoName;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UIImage *catImage;
+@property (nonatomic, strong) NSString *urlString;
 
 @end
