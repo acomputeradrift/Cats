@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSMutableArray <Cat*> *catsArray;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *CatCollectionView;
+
 
 
 @end
@@ -20,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.catsArray = [[NSMutableArray alloc] init];
     [self getDataFromUrlAndParse];
 }
 
@@ -54,11 +57,12 @@
             NSString *server  = [detailDict valueForKey:@"server"];
             NSString *KeyId  = [detailDict valueForKey:@"id"];
             NSString *secret  = [detailDict valueForKey:@"secret"];
-            NSString* urlStr = [NSString stringWithFormat:@"https://farm%@.staticflicker.com/%@/%@_%@_m.jpg", farm, server, KeyId, secret];
+            NSString* urlStr = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@_m.jpg", farm, server, KeyId, secret];
             Cat *cat = [[Cat alloc]init];
             cat.title = [detailDict valueForKey:@"title"];
             cat.urlString = urlStr;
-            [self fetchImageForCat:cat];
+            [self.catsArray addObject:cat];
+            
             
         }
         
@@ -69,14 +73,14 @@
         }
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            // [self.UITableView reloadData];
+            [self.CatCollectionView reloadData];
         }];
     }];
     [dataTask resume]; // 6
 }
 
 
-- (void) fetchImageForCat: (Cat*)cat{
+- (void) fetchImage: (Cat*)cat andSetImage: (UIImageView*)imageView{
     
     NSURL *url = [NSURL URLWithString:cat.urlString];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration]; // 2
@@ -91,12 +95,16 @@
         
         NSData *data = [NSData dataWithContentsOfURL:location];
         UIImage *image = [UIImage imageWithData:data]; // 2
-        cat.catImage = image;
+         cat.catImage = image;
+        
+        
+        
         
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             // This will run on the main queue
-            [self.catsArray addObject:cat];
+          
+            imageView.image = cat.catImage;
             //self.iPhoneImageView.image = image; // 4
         }];
         
@@ -112,11 +120,13 @@
     
     CatCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CatCollectionViewCell" forIndexPath:indexPath];
     //    //get item in array at index
-    
+    cell.catImageView.image = nil;
     Cat *cat = self.catsArray[indexPath.item];
-    cell.catImageView.image = cat.catImage;
-    //set cell image
     cell.catTitleLabel.text = cat.title;
+    [self fetchImage:cat andSetImage:cell.catImageView];
+    
+    //set cell image
+    
     return cell;
 }
 
